@@ -4,6 +4,13 @@ import os
 import shutil
 import torch
 import warnings
+
+import sys 
+sys.path.append('/cluster/home/terjenf/MapTR')
+sys.path.append('/cluster/home/terjenf/MapTR/projects')
+sys.path.append('/cluster/home/terjenf/MapTR/projects/mmdet3d_plugin')
+
+
 from mmcv import Config, DictAction
 from mmcv.cnn import fuse_conv_bn
 from mmcv.parallel import MMDataParallel, MMDistributedDataParallel

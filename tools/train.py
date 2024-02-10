@@ -29,6 +29,14 @@ from mmseg import __version__ as mmseg_version
 
 from mmcv.utils import TORCH_VERSION, digit_version
 
+import sys 
+sys.path.append('/cluster/home/terjenf/MapTR')
+sys.path.append('/cluster/home/terjenf/MapTR/projects')
+sys.path.append('/cluster/home/terjenf/MapTR/projects/mmdet3d_plugin')
+
+print("Python interpreter's search path for libraries:")
+for path in sys.path:
+    print(path)
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Train a detector')
@@ -97,7 +105,6 @@ def parse_args():
         args.cfg_options = args.options
 
     return args
-
 
 def main():
     args = parse_args()

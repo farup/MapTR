@@ -8,6 +8,16 @@ import mmcv
 import os
 import torch
 import warnings
+
+import sys 
+sys.path.append('/cluster/home/terjenf/MapTR')
+sys.path.append('/cluster/home/terjenf/MapTR/projects')
+sys.path.append('/cluster/home/terjenf/MapTR/projects/mmdet3d_plugin')
+
+print("Python interpreter's search path for libraries:")
+for path in sys.path:
+    print(path)
+
 from mmcv import Config, DictAction
 from mmcv.cnn import fuse_conv_bn
 from mmcv.parallel import MMDataParallel, MMDistributedDataParallel
@@ -23,6 +33,8 @@ from projects.mmdet3d_plugin.bevformer.apis.test import custom_multi_gpu_test
 from mmdet.datasets import replace_ImageToTensor
 import time
 import os.path as osp
+
+
 
 
 def parse_args():
